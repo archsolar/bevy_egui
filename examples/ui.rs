@@ -1,5 +1,6 @@
 use bevy::prelude::*;
-use bevy_egui::{egui, egui::TextureFilter, EguiContext, EguiPlugin, EguiSettings};
+use bevy_egui::{egui, EguiContext, EguiPlugin, EguiSettings};
+use egui::TextureOptions;
 
 struct Images {
     bevy_icon: Handle<Image>,
@@ -92,7 +93,7 @@ fn ui_example(
             egui_ctx.ctx_mut().load_texture(
                 "example-image",
                 egui::ColorImage::example(),
-                TextureFilter::Nearest,
+                TextureOptions::NEAREST,
             )
         })
         .clone();
